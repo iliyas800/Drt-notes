@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DRT MCQ Practice - Page 5 (Q41-50)</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+    .question { background: #fff; padding: 15px; margin-bottom: 10px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+    .options { margin-top: 10px; }
+    .option { margin-bottom: 5px; }
+    .correct { color: green; font-weight: bold; }
+    .incorrect { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>DRT MCQ Practice - Questions 41 to 50</h2>
+  <div id="quiz"></div>
+  <button onclick="submitQuiz()">Submit</button>
+  <div id="result"></div>
+  <script>
+    const questions = [
+      {
+        q: "41. What is the SI unit of absorbed dose?",
+        options: ["Rem", "Sievert", "Gray", "Rontgen"],
+        answer: 2
+      },
+      {
+        q: "42. What is the ideal distance for chest X-ray?",
+        options: ["30 cm", "72 inches", "100 cm", "10 meters"],
+        answer: 1
+      },
+      {
+        q: "43. What does kVp control in radiography?",
+        options: ["Density", "Contrast", "Sharpness", "Noise"],
+        answer: 1
+      },
+      {
+        q: "44. Which device is used to focus X-rays?",
+        options: ["Collimator", "Grid", "Filter", "Anode"],
+        answer: 0
+      },
+      {
+        q: "45. Developer solution mainly contains which chemical?",
+        options: ["Hydroquinone", "Sodium carbonate", "Acetic acid", "Alum"],
+        answer: 0
+      },
+      {
+        q: "46. Which structure appears white on X-ray?",
+        options: ["Air", "Fat", "Bone", "Muscle"],
+        answer: 2
+      },
+      {
+        q: "47. Which is the best method to protect from scatter radiation?",
+        options: ["Lead shield", "Increase exposure", "Remove patient", "Use high mAs"],
+        answer: 0
+      },
+      {
+        q: "48. Which part of the X-ray machine rotates?",
+        options: ["Anode", "Cathode", "Filament", "Glass tube"],
+        answer: 0
+      },
+      {
+        q: "49. What is the main use of intensifying screen?",
+        options: ["Reduce dose", "Increase detail", "Reduce sharpness", "Produce sound"],
+        answer: 0
+      },
+      {
+        q: "50. What is the meaning of ALARA?",
+        options: ["As Long As Radiated Area", "As Low As Reasonably Achievable", "At Least All Radiation Accepted", "As Low As Reasonably Applied"],
+        answer: 1
+      }
+    ];
+
+    function submitQuiz() {
+      let output = "";
+      let score = 0;
+      questions.forEach((q, i) => {
+        const selected = document.querySelector(`input[name=q${i}]:checked`);
+        if (!selected) return;
+        const selectedIndex = parseInt(selected.value);
+        if (selectedIndex === q.answer) {
+          output += `<p class='correct'>Q${i+41}: ✔ Correct</p>`;
+          score++;
+        } else {
+          output += `<p class='incorrect'>Q${i+41}: ❌ Incorrect. Correct answer is: ${q.options[q.answer]}</p>`;
+        }
+      });
+      document.getElementById("result").innerHTML = `<h3>Your Score: ${score}/${questions.length}</h3>` + output;
+    }
+
+    const quizDiv = document.getElementById("quiz");
+    questions.forEach((q, i) => {
+      let html = `<div class='question'><b>${q.q}</b><div class='options'>`;
+      q.options.forEach((opt, j) => {
+        html += `<div class='option'><label><input type='radio' name='q${i}' value='${j}'> ${opt}</label></div>`;
+      });
+      html += `</div></div>`;
+      quizDiv.innerHTML += html;
+    });
+  </script>
+</body>
+</html>
+<style>
+  body {
+    background-image: url('book-pattern.png');
+    background-repeat: repeat;
+    background-size: 100px;
+  }
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>My Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!-- content -->
+</body>
+</html>
+<style>
+  body {
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  h1, h2, p {
+    word-wrap: break-word;
+  }
+</style>

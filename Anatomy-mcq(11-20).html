@@ -1,0 +1,165 @@
+<!DOCTYPE html><html>
+<head>
+  <title>DRT MCQ Quiz</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f2f2f2; }
+    .question { background: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .feedback { margin-top: 5px; font-weight: bold; display: block; }
+    #result { font-size: 18px; font-weight: bold; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h2>DRT MCQ Quiz (Questions 11 to 20)</h2>
+  <form id="quizForm">
+<!-- Questions 11 to 20 -->
+<div class="question">
+  <p>11. X-ray का आविष्कार किसने किया था?</p>
+  <label><input type="radio" name="q11" value="A"> Thomas Edison</label>
+  <label><input type="radio" name="q11" value="B"> Wilhelm Roentgen</label>
+  <label><input type="radio" name="q11" value="C"> Marie Curie</label>
+  <span id="feedback-q11" class="feedback"></span>
+</div><div class="question">
+  <p>12. X-ray का मुख्य उपयोग क्या है?</p>
+  <label><input type="radio" name="q12" value="A"> Ultrasound</label>
+  <label><input type="radio" name="q12" value="B"> Diagnosis of bones</label>
+  <label><input type="radio" name="q12" value="C"> MRI</label>
+  <span id="feedback-q12" class="feedback"></span>
+</div><div class="question">
+  <p>13. Radiography में contrast material का उपयोग किस लिए होता है?</p>
+  <label><input type="radio" name="q13" value="A"> Internal organs को clearly दिखाने के लिए</label>
+  <label><input type="radio" name="q13" value="B"> Radiation बढ़ाने के लिए</label>
+  <label><input type="radio" name="q13" value="C"> Dose कम करने के लिए</label>
+  <span id="feedback-q13" class="feedback"></span>
+</div><div class="question">
+  <p>14. Diagnostic radiology में सबसे ज्यादा इस्तेमाल होने वाला imaging modality कौन सा है?</p>
+  <label><input type="radio" name="q14" value="A"> X-ray</label>
+  <label><input type="radio" name="q14" value="B"> Ultrasound</label>
+  <label><input type="radio" name="q14" value="C"> MRI</label>
+  <span id="feedback-q14" class="feedback"></span>
+</div><div class="question">
+  <p>15. Radiographic image में ‘density’ किसे दर्शाती है?</p>
+  <label><input type="radio" name="q15" value="A"> Image size</label>
+  <label><input type="radio" name="q15" value="B"> Image का काला-पन</label>
+  <label><input type="radio" name="q15" value="C"> Contrast</label>
+  <span id="feedback-q15" class="feedback"></span>
+</div><div class="question">
+  <p>16. X-ray में image formation के लिए कौन सा principle काम करता है?</p>
+  <label><input type="radio" name="q16" value="A"> Differential absorption</label>
+  <label><input type="radio" name="q16" value="B"> Resonance</label>
+  <label><input type="radio" name="q16" value="C"> Refraction</label>
+  <span id="feedback-q16" class="feedback"></span>
+</div><div class="question">
+  <p>17. Radiographic film का developer solution किस purpose के लिए होता है?</p>
+  <label><input type="radio" name="q17" value="A"> Latent image को visible image में बदलने के लिए</label>
+  <label><input type="radio" name="q17" value="B"> Film को dry करने के लिए</label>
+  <label><input type="radio" name="q17" value="C"> Fixer को neutralize करने के लिए</label>
+  <span id="feedback-q17" class="feedback"></span>
+</div><div class="question">
+  <p>18. Fixer solution का main काम क्या होता है?</p>
+  <label><input type="radio" name="q18" value="A"> Image को wash करना</label>
+  <label><input type="radio" name="q18" value="B"> Image को color देना</label>
+  <label><input type="radio" name="q18" value="C"> Unexposed silver को हटाना</label>
+  <span id="feedback-q18" class="feedback"></span>
+</div><div class="question">
+  <p>19. X-ray tube में target material क्या होता है?</p>
+  <label><input type="radio" name="q19" value="A"> Tungsten</label>
+  <label><input type="radio" name="q19" value="B"> Copper</label>
+  <label><input type="radio" name="q19" value="C"> Silver</label>
+  <span id="feedback-q19" class="feedback"></span>
+</div><div class="question">
+  <p>20. X-ray का biological effect मुख्य रूप से किस पर निर्भर करता है?</p>
+  <label><input type="radio" name="q20" value="A"> Frequency</label>
+  <label><input type="radio" name="q20" value="B"> Speed</label>
+  <label><input type="radio" name="q20" value="C"> Dose and exposure time</label>
+  <span id="feedback-q20" class="feedback"></span>
+</div><button type="button" onclick="submitQuiz()">Submit</button>
+
+<p id="result"></p>
+</form>
+<script>
+function submitQuiz() {
+  const correctAnswers = {
+    q11: "B",
+    q12: "B",
+    q13: "A",
+    q14: "A",
+    q15: "B",
+    q16: "A",
+    q17: "A",
+    q18: "C",
+    q19: "A",
+    q20: "C"
+  };let score = 0; let total = Object.keys(correctAnswers).length;
+
+for (let key in correctAnswers) { const selected = document.querySelector('input[name="' + key + '"]:checked'); const feedback = document.getElementById("feedback-" + key);
+
+if (selected) {
+  if (selected.value === correctAnswers[key]) {
+    score++;
+    feedback.textContent = "✔ सही जवाब!";
+    feedback.style.color = "green";
+  } else {
+    feedback.textContent = "❌ गलत जवाब! सही: " + correctAnswers[key];
+    feedback.style.color = "red";
+  }
+} else {
+  feedback.textContent = "❗ जवाब नहीं चुना";
+  feedback.style.color = "orange";
+}
+
+}
+
+document.getElementById("result").innerText = "✅ आपने " + score + " में से " + total + " सही किए।"; } </script>
+
+</body>
+</html>
+<a href="Anatomy-mcq(21-30).html" class="btn">More question (21–30)</a>
+
+<style>
+  .btn {
+    color: white; /* Text Color */
+    background-color: #007bff; /* Blue Background */
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+  }
+</style>
+<style>
+  body {
+    background-image: url('book-pattern.png');
+    background-repeat: repeat;
+    background-size: 100px;
+  }
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>My Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!-- content -->
+</body>
+</html>
+<style>
+  body {
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  h1, h2, p {
+    word-wrap: break-word;
+  }
+</style>

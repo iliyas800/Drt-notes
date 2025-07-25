@@ -1,0 +1,187 @@
+<!DOCTYPE html><html>
+<head>
+  <title>DRT MCQ Quiz</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f2f2f2; }
+    .question { background: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .feedback { margin-top: 5px; font-weight: bold; display: block; }
+    #result { font-size: 18px; font-weight: bold; margin-top: 20px; }
+  </style>
+</head>
+<body>  <h2>DRT MCQ Quiz (50 Questions)</h2>  <form id="quizForm"><!-- Questions 1 to 10 -->
+<div class="question">
+  <p>1. What is the longest bone in the human body?</p>
+  <label><input type="radio" name="q1" value="A"> Femur</label>
+  <label><input type="radio" name="q1" value="B"> Tibia</label>
+  <label><input type="radio" name="q1" value="C"> Radius</label>
+  <span id="feedback-q1" class="feedback"></span>
+</div>
+
+<div class="question">
+  <p>2. What does X-ray primarily image?</p>
+  <label><input type="radio" name="q2" value="A"> Muscles</label>
+  <label><input type="radio" name="q2" value="B"> Bones</label>
+  <label><input type="radio" name="q2" value="C"> Blood</label>
+  <span id="feedback-q2" class="feedback"></span>
+</div>
+
+<div class="question">
+  <p>3. Darkroom is used in which process?</p>
+  <label><input type="radio" name="q3" value="A"> Radiation Therapy</label>
+  <label><input type="radio" name="q3" value="B"> Film Development</label>
+  <label><input type="radio" name="q3" value="C"> CT Scan</label>
+  <span id="feedback-q3" class="feedback"></span>
+</div>
+
+<div class="question">
+  <p>4. Which of the following is a type of radiation?</p>
+  <label><input type="radio" name="q4" value="A"> Magnetic</label>
+  <label><input type="radio" name="q4" value="B"> X-ray</label>
+  <label><input type="radio" name="q4" value="C"> Thermal</label>
+  <span id="feedback-q4" class="feedback"></span>
+</div>
+
+<div class="question">
+  <p>5. What is used to protect from radiation?</p>
+  <label><input type="radio" name="q5" value="A"> Lead Apron</label>
+  <label><input type="radio" name="q5" value="B"> Plastic Sheet</label>
+  <label><input type="radio" name="q5" value="C"> Cotton Cloth</label>
+  <span id="feedback-q5" class="feedback"></span>
+</div>
+
+<div class="question">
+  <p>6. Which vitamin is synthesized by sunlight?</p>
+  <label><input type="radio" name="q6" value="A"> Vitamin A</label>
+  <label><input type="radio" name="q6" value="B"> Vitamin D</label>
+  <label><input type="radio" name="q6" value="C"> Vitamin C</label>
+  <span id="feedback-q6" class="feedback"></span>
+</div>
+
+<div class="question">
+  <p>7. Which of the following is not a part of the human skeleton?</p>
+  <label><input type="radio" name="q7" value="A"> Skull</label>
+  <label><input type="radio" name="q7" value="B"> Femur</label>
+  <label><input type="radio" name="q7" value="C"> Liver</label>
+  <span id="feedback-q7" class="feedback"></span>
+</div>
+
+<div class="question">
+  <p>8. What is used in X-ray imaging?</p>
+  <label><input type="radio" name="q8" value="A"> Sound Waves</label>
+  <label><input type="radio" name="q8" value="B"> X-rays</label>
+  <label><input type="radio" name="q8" value="C"> Water</label>
+  <span id="feedback-q8" class="feedback"></span>
+</div>
+
+<div class="question">
+  <p>9. Radiography is used to study?</p>
+  <label><input type="radio" name="q9" value="A"> Digestion</label>
+  <label><input type="radio" name="q9" value="B"> Internal Organs</label>
+  <label><input type="radio" name="q9" value="C"> Dreams</label>
+  <span id="feedback-q9" class="feedback"></span>
+</div>
+
+<div class="question">
+  <p>10. Which chemical is used in film development?</p>
+  <label><input type="radio" name="q10" value="A"> Water</label>
+  <label><input type="radio" name="q10" value="B"> Developer</label>
+  <label><input type="radio" name="q10" value="C"> Salt</label>
+  <span id="feedback-q10" class="feedback"></span>
+</div>
+
+<button type="button" onclick="submitQuiz()">Submit</button>
+<p id="result"></p>
+
+  </form>  <script>
+    function submitQuiz() {
+      const correctAnswers = {
+        q1: "A",
+        q2: "B",
+        q3: "B",
+        q4: "B",
+        q5: "A",
+        q6: "B",
+        q7: "C",
+        q8: "B",
+        q9: "B",
+        q10: "B"
+      };
+
+      let score = 0;
+      let total = Object.keys(correctAnswers).length;
+
+      for (let key in correctAnswers) {
+        const selected = document.querySelector('input[name="' + key + '"]:checked');
+        const feedback = document.getElementById("feedback-" + key);
+
+        if (selected) {
+          if (selected.value === correctAnswers[key]) {
+            score++;
+            feedback.textContent = "✔ सही जवाब!";
+            feedback.style.color = "green";
+          } else {
+            feedback.textContent = "❌ गलत जवाब! सही: " + correctAnswers[key];
+            feedback.style.color = "red";
+          }
+        } else {
+          feedback.textContent = "❗ जवाब नहीं चुना";
+          feedback.style.color = "orange";
+        }
+      }
+
+      document.getElementById("result").innerText = "✅ आपने " + score + " में से " + total + " सही किए।";
+    }
+  </script>
+  
+  </body>
+</html>
+<a href="Anatomy-mcq(11-20).html" class="btn">More question (11–20)</a>
+
+<style>
+  .btn {
+    color: white; /* Text Color */
+    background-color: #007bff; /* Blue Background */
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+  }
+</style>
+<style>
+  body {
+    background-image: url('book-pattern.png');
+    background-repeat: repeat;
+    background-size: 100px;
+  }
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>My Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!-- content -->
+</body>
+</html>
+<style>
+  body {
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  h1, h2, p {
+    word-wrap: break-word;
+  }
+</style>

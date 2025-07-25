@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DRT MCQ Practice - Page 4 (Q31-40)</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+    .question { background: #fff; padding: 15px; margin-bottom: 10px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+    .options { margin-top: 10px; }
+    .option { margin-bottom: 5px; }
+    .correct { color: green; font-weight: bold; }
+    .incorrect { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>DRT MCQ Practice - Questions 31 to 40</h2>
+  <div id="quiz"></div>
+  <button onclick="submitQuiz()">Submit</button>
+  <div id="result"></div>
+  <script>
+    const questions = [
+      {
+        q: "31. What does ALARA stand for in radiology?",
+        options: ["As Low As Reasonably Achievable", "As Late As Radiation Allows", "All Light And Radiation Accepted", "Allowed Low Absorbed Radiation Amount"],
+        answer: 0
+      },
+      {
+        q: "32. Which of the following is a non-ionizing radiation?",
+        options: ["Alpha particles", "Gamma rays", "Microwaves", "Beta particles"],
+        answer: 2
+      },
+      {
+        q: "33. The component in X-ray tube that produces electrons is called:",
+        options: ["Anode", "Target", "Filament", "Collimator"],
+        answer: 2
+      },
+      {
+        q: "34. The term 'radiolucent' refers to substances that:",
+        options: ["Appear white on X-ray", "Block X-rays completely", "Allow X-rays to pass through", "Are dangerous to handle"],
+        answer: 2
+      },
+      {
+        q: "35. Which part of the body is most radiosensitive?",
+        options: ["Liver", "Lung", "Thyroid", "Gonads"],
+        answer: 3
+      },
+      {
+        q: "36. What is used to improve the sharpness of an X-ray image?",
+        options: ["Grid", "Film", "Focal spot", "Compression"],
+        answer: 0
+      },
+      {
+        q: "37. The standard distance between X-ray tube and film is:",
+        options: ["40 cm", "100 cm", "180 cm", "60 cm"],
+        answer: 1
+      },
+      {
+        q: "38. Film fog in radiography is caused by:",
+        options: ["Proper exposure", "Light leakage", "Grid movement", "Low mAs"],
+        answer: 1
+      },
+      {
+        q: "39. Which filter material is commonly used in X-ray machines?",
+        options: ["Lead", "Copper", "Aluminum", "Tin"],
+        answer: 2
+      },
+      {
+        q: "40. The developer solution in darkroom processing works by:",
+        options: ["Hardening the emulsion", "Washing the film", "Reducing exposed silver halide", "Fixing the image"],
+        answer: 2
+      }
+    ];
+
+    function submitQuiz() {
+      let output = "";
+      let score = 0;
+      questions.forEach((q, i) => {
+        const selected = document.querySelector(`input[name=q${i}]:checked`);
+        if (!selected) return;
+        const selectedIndex = parseInt(selected.value);
+        if (selectedIndex === q.answer) {
+          output += `<p class='correct'>Q${i+31}: ✔ Correct</p>`;
+          score++;
+        } else {
+          output += `<p class='incorrect'>Q${i+31}: ❌ Incorrect. Correct answer is: ${q.options[q.answer]}</p>`;
+        }
+      });
+      document.getElementById("result").innerHTML = `<h3>Your Score: ${score}/${questions.length}</h3>` + output;
+    }
+
+    const quizDiv = document.getElementById("quiz");
+    questions.forEach((q, i) => {
+      let html = `<div class='question'><b>${q.q}</b><div class='options'>`;
+      q.options.forEach((opt, j) => {
+        html += `<div class='option'><label><input type='radio' name='q${i}' value='${j}'> ${opt}</label></div>`;
+      });
+      html += `</div></div>`;
+      quizDiv.innerHTML += html;
+    });
+  </script>
+</body>
+</html>
+<a href="Anatomy-mcq(41-50).html" class="btn">More question (41–50)</a>
+
+<style>
+  .btn {
+    color: white; /* Text Color */
+    background-color: #007bff; /* Blue Background */
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+  }
+</style>
+<style>
+  body {
+    background-image: url('book-pattern.png');
+    background-repeat: repeat;
+    background-size: 100px;
+  }
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>My Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!-- content -->
+</body>
+</html>
+<style>
+  body {
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  h1, h2, p {
+    word-wrap: break-word;
+  }
+</style>
